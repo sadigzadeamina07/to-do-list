@@ -9,7 +9,7 @@
 </head>
   <body>
     <div class="container mt-5">
-      <div class="card m-auto" style="width: 22rem;">
+      <div class="card p-2 m-auto" style="width: 22rem;">
         <div class="card-body ">
           <h5 class="card-title text-primary d-flex  mb-3 justify-content-center">To-Do list</h5>
           <input class="form-control mb-3" id="cavab" type="text" placeholder="Planla">
@@ -24,23 +24,21 @@
   let list=document.querySelector('#list')
   let siyahi=[]
   function  yaz(){
-if(cavab.value){
   siyahi.unshift(cavab.value)
   cavab.value=""
   cavab.focus()
-create()
-}
+  create()
   }
     function  create(){
     let  kod=""
     for(let  i=0; i<siyahi.length;i++){
-      kod+=`<li class="border  d-flex align-items-center justify-content-between rounded border-secondary p-1">${siyahi[i]}<button  class="btn btn-primary  text-danger bg-transparent border-0 " onclick=" sil(${i})">x</button> </li> ` 
+      kod+=`<li class="border  d-flex align-items-center justify-content-between rounded border-secondary mb-3  p-1">${siyahi[i]}<button  class="btn btn-primary  text-danger bg-transparent border-0 " onclick=" sil(${i})">X</button> </li> ` 
     }
     list.innerHTML=kod
   }
   function sil(i){
-siyahi.splice(i,1)
-create()
+  siyahi.splice(i,1)
+  create()
   }
 </script>
   </body>
