@@ -8,15 +8,42 @@
 
 </head>
   <body>
-    <div class="container  ">
-<div class="card  m-auto  d-flex " style="width: 18rem;">
-  <div class="card-body   text-center ">
-    <h5 class="card-title text-primary mb-3">To-Do list</h5>
-  <input class="form-control mb-5 " type="text" placeholder="Planla"  >
-   <a href="#" class="btn btn-primary w-100 mt-5">Go somewhere</a>
-  </div>
-</div>
+    <div class="container mt-5">
+      <div class="card m-auto" style="width: 22rem;">
+        <div class="card-body ">
+          <h5 class="card-title text-primary d-flex  mb-3 justify-content-center">To-Do list</h5>
+          <input class="form-control mb-3" id="cavab" type="text" placeholder="Planla">
+              <ul id="list" class="list-group my-3 list-unstyled "></ul>
+          <a href="#" class="btn btn-primary w-100" onclick="yaz()">Vəzifə əlavə et</a>
+
+        </div>
+      </div>
     </div>
 
+<script>
+  let cavab=document.querySelector('#cavab')
+  let list=document.querySelector('#list')
+  let siyahi=[]
+  function  yaz(){
+if(cavab.value){
+  siyahi.unshift(cavab.value)
+  cavab.value=""
+  cavab.focus()
+create()
+}
+  }
+    function  create(){
+    let  kod=""
+    for(let  i=0; i<siyahi.length;i++){
+      kod+=`<li class="border  d-flex align-items-center justify-content-between rounded border-secondary p-1">${siyahi[i]}<button  class="btn btn-primary  text-danger bg-transparent border-0 " onclick+=li<sil(${i})> x</button> </li> ` 
+    }
+    list.innerHTML=kod
+  }
+  function sil(i){
+siyahi.splice(i,1)
+create()
+  }
+
+</script>
   </body>
 </html>
